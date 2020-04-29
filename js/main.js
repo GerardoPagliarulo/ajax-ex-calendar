@@ -30,7 +30,7 @@ $(document).ready(function () {
         var nextMonth = baseMonth.add(1, 'month');
         //console.log(nextMonth.format('YYYY MM DD'));
         //Fine Calendario
-        if (nextMonth.format('YYYY MM DD') === nextYear.format('YYYY MM DD')) {
+        if (nextMonth.format('YYYY-MM-DD') === nextYear.format('YYYY-MM-DD')) {
             alert('Fine calendario.');
             nextMonth.subtract(1, 'month');
         }                        
@@ -45,7 +45,7 @@ $(document).ready(function () {
         var previousMonth = baseMonth.subtract(1, 'month');
         //console.log(previousMonth.format('YYYY MM DD'));
         //Fine Calendario
-        if (previousMonth.format('YYYY MM DD') === previousYear.format('YYYY MM DD')) {
+        if (previousMonth.format('YYYY-MM-DD') === previousYear.format('YYYY-MM-DD')) {
             alert('Fine calendario.');
             previousMonth.add(1, 'month');
         }                
