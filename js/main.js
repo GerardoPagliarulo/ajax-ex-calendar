@@ -67,8 +67,9 @@ function printMonth(template, date) {
     // numero giorni nel mese
     var daysInMonth = date.daysInMonth();
 
-    //  setta header
+    //  setta mese
     $('h1').html( date.format('MMMM YYYY') );
+    $('h3').html( date.format('MMMM YYYY') );
 
     // Imposta data attribute data visualizzata
     $('.month').attr('data-this-date',  date.format('YYYY-MM-DD'));
@@ -85,7 +86,8 @@ function printMonth(template, date) {
         // imposta dati template
         var context = {
             class: 'day',
-            day: thisDate.format('DD MMMM'),
+            day: thisDate.format('DD'),
+            //day: thisDate.format('DD MMMM'),
             completeDate: thisDate.format('YYYY-MM-DD')
         };
 
@@ -115,7 +117,8 @@ function printHoliday(date) {
 
                 if(listItem) {
                     listItem.addClass('holiday');
-                    listItem.text( listItem.text() + ' - ' + thisHoliday.name );
+                    listItem.children('.holiday').text(thisHoliday.name );
+                    //listItem.text( listItem.text() + ' - ' + thisHoliday.name );
                 }
             }
         },

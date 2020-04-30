@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calendar</title>
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    
-    <div class="container">
+    <!-- SLIDER MONTH -->
+    <div class="slider">
+        <i class="fas fa-chevron-left previous-month"></i>
         <h1 class="month"></h1>
-        <div class="month-choice">
-            <p class="previous-month">Precedente</p>
-            <p class="next-month">Successivo</p>
+        <i class="fas fa-chevron-right next-month"></i>
+    </div>
+    <!-- CALENDAR -->
+    <div class="calendar container">
+        <div class="title">
+            <h2 class="name">Boolean Calendar</h2>
+            <h3 class="month"></h3>    
         </div>
         <ul class="month-list"></ul>
     </div>
@@ -21,8 +27,9 @@
 
     <!-- TEMPLATES HANDLEBARS -->
     <script id="day-template" type="text/x-handlebars-template">
-        <li class="{{ class }}" data-complete-date="{{ completeDate }}">
-            {{ day }}
+        <li class="{{ class }} day-style" data-complete-date="{{ completeDate }}">
+            <span>{{ day }}</span>
+            <span class="holiday"></span>
         </li>
     </script>
 

@@ -5,21 +5,76 @@
 }
 
 body {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background: #009688;
     font-family: sans-serif;
 }
 
-.container {
-    margin: 0 auto;
-    text-align: center;
-}
-.month-choice {
+/* SLIDER MONTH */
+.slider {
+    position: absolute;
+    bottom: 150px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding-right: 130px;
+    background: #d2dbdc;
+}
+
+.slider .month {
+    width: 400px;
+    font-size: 50px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.slider i {
+    font-size: 40px;
     cursor: pointer;
 }
 
-.month-choice p {
-    margin: 10px;
+.slider i:hover {
+    opacity: .5;
+}
+
+/* CALENDAR */
+.calendar.container {
+    position: absolute;
+    bottom: 100px;
+    width: 675px;
+    height: 530px;
+    margin-left: 150px;
+    text-align: center;
+    background: #fff;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+.calendar .title {
+    line-height: 35px;
+    background: #d2dbdc;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.calendar .month-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 50px 20px 0px 20px;
+}
+
+/* TEMPLATE HANDLEBARS */
+.day-style {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 14%;
+    height: 81px;
+    font-weight: bold;
 }
 
 li.holiday {
