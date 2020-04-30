@@ -47,7 +47,7 @@ body {
     position: absolute;
     bottom: 100px;
     width: 675px;
-    height: 530px;
+    height: 605px;
     margin-left: 150px;
     text-align: center;
     background: #fff;
@@ -75,6 +75,10 @@ body {
     flex-basis: 14%;
     height: 81px;
     font-weight: bold;
+}
+
+li span:first-child {
+    color: #009688;
 }
 
 li.holiday {

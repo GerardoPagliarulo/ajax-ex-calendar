@@ -75,6 +75,28 @@ function printMonth(template, date) {
     $('.month').attr('data-this-date',  date.format('YYYY-MM-DD'));
 
     // genera giorni mese
+    // literal day
+    for (var i = 0; i < 7; i++) {
+        // genera data con moment js
+        var thisDate = moment({
+            year: date.year(),
+            month: date.month(),
+            day: i + 1
+        });
+
+        // imposta dati template
+        var context = {
+            class: 'day',
+            'day-literal': thisDate.format('ddd'),
+            //day: thisDate.format('DD MMMM'),
+            //completeDate: thisDate.format('YYYY-MM-DD')
+        };
+
+        //compilare e aggiungere template
+        var html = template(context);
+        $('.month-list').append(html);
+    }
+    // number day
     for (var i = 0; i < daysInMonth; i++) {
         // genera data con moment js
         var thisDate = moment({
@@ -86,7 +108,7 @@ function printMonth(template, date) {
         // imposta dati template
         var context = {
             class: 'day',
-            day: thisDate.format('DD'),
+            'day-num': thisDate.format('DD'),
             //day: thisDate.format('DD MMMM'),
             completeDate: thisDate.format('YYYY-MM-DD')
         };
