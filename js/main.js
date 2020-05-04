@@ -27,12 +27,12 @@ $(document).ready(function () {
     // Button Next month
     next.click(function () {
         $('.month-list li').remove();
-        var nextMonth = baseMonth.add(1, 'month');
+        var nextMonth = baseMonth.add(1, 'months');
         //console.log(nextMonth.format('YYYY MM DD'));
         //Fine Calendario
         if (nextMonth.format('YYYY-MM-DD') === nextYear.format('YYYY-MM-DD')) {
             alert('Fine calendario.');
-            nextMonth.subtract(1, 'month');
+            nextMonth.subtract(1, 'months');
         }                        
         // print giorno
         printMonth(template, nextMonth);
@@ -42,12 +42,12 @@ $(document).ready(function () {
     // Button Previous month
     previous.click(function () {
         $('.month-list li').remove();
-        var previousMonth = baseMonth.subtract(1, 'month');
+        var previousMonth = baseMonth.subtract(1, 'months');
         //console.log(previousMonth.format('YYYY MM DD'));
         //Fine Calendario
         if (previousMonth.format('YYYY-MM-DD') === previousYear.format('YYYY-MM-DD')) {
             alert('Fine calendario.');
-            previousMonth.add(1, 'month');
+            previousMonth.add(1, 'months');
         }                
         // print giorno
         printMonth(template, previousMonth);
